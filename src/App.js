@@ -1,14 +1,13 @@
-import List from "./List";
+import { useEffect, useState } from "react";
 
 function App() {
-  const tasks = [
-    { id: 1, title: "아무일도 하기 싫다." },
-    { id: 2, title: "집에서 놀기" }
-  ];
+  const [number, setNumber] = useState(0);
+
   return (
     <div>
-      <h1>Todo</h1>
-      <List tasks={tasks} />
+      <div>{number}</div>
+      <button onClick={() => setNumber((pre) => pre + 1)}>+</button>
+      <button onClick={() => setNumber((pre) => pre - 1)}>-</button>
     </div>
   );
 }
