@@ -1,12 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-describe("", () => {
-  const setup = (props = {}) => {
-    return {
-      ...utils,
-    };
-  };
-
+describe("App", () => {
   it("", () => {
     const { input, button } = setup();
   });
