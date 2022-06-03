@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
-import { todoState } from "../../atom/todoState";
+import { todoState } from "../../atom/TodoState";
 import { TodoState } from "../../lib/interface/todoInterface";
 
 interface ITodoFormContainerProps {}
 
-const TodoProFormContainer = () => {
+const TodoFormContainer = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useRecoilState(todoState);
 
@@ -36,4 +36,4 @@ const TodoProFormContainer = () => {
   );
 };
 
-export default TodoProFormContainer;
+export default TodoFormContainer;
