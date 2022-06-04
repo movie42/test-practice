@@ -1,7 +1,14 @@
 import React from "react";
+import TodoItemContainer from "./Components/TodoItemContainer/TodoItemContainer";
+import TodoFormContainer from "./Components/TodoFormContainer/TodoFormContainer";
 
 function App() {
-  return <div className="App">투두 리스트</div>;
+  return (
+    <div>
+      <TodoFormContainer />
+      <TodoItemContainer />
+    </div>
+  );
 }
 
 export default App;
