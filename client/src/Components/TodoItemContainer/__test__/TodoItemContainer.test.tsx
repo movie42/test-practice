@@ -11,7 +11,7 @@ describe(`TodoItemContainer`, () => {
       <RecoilRoot>
         <InjectTestingRecoilState todos={todos} />
         <TodoItemContainer />
-      </RecoilRoot>,
+      </RecoilRoot>
     );
 
   it("TodoItemContainer에는 list가 출력되어야합니다. 리스트에는 todo 제목과 버튼이 있어야합니다.", () => {
