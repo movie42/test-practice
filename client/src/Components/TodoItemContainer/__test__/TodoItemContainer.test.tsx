@@ -5,7 +5,7 @@ import { State, ToDo } from "../../../lib/interface/todoInterface";
 import TodoItemContainer from "../TodoItemContainer";
 
 describe(`TodoItemContainer`, () => {
-  const todos = [{ id: "1234", name: "달리기", state: State.TODO }];
+  const todos = [{ _id: "1234", title: "달리기", desc: "", state: State.TODO }];
   const renderTodoItemContainer = (todos: ToDo[]) =>
     render(
       <RecoilRoot>

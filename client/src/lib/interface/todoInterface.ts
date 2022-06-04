@@ -1,10 +1,13 @@
 export enum State {
   TODO = "todo",
-  DONE = "done",
+  DONE = "done"
 }
 
 export interface ToDo {
-  id: string;
-  name: string;
+  _id: string;
+  title: string;
+  desc?: string;
+  start?: string;
+  end?: string;
   state: State;
 }

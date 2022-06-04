@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
-import { todoState } from "../../atom/TodoState";
+import { todoState } from "../../recoil/atoms/TodoState";
 import { State } from "../../lib/interface/todoInterface";
 
 interface ITodoFormContainerProps {}
@@ -12,7 +12,7 @@ const TodoFormContainer = () => {
   const addTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const id = String(new Date());
-    setTodos((pre) => [...pre, { id, name: todo, state: State.TODO }]);
+    setTodos((pre) => [...pre, { _id: id, title: todo, state: State.TODO }]);
     setTodo("");
   };
 

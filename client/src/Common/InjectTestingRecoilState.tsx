@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSetRecoilState } from "recoil";
-import { todoState } from "../atom/TodoState";
+import { todoState } from "../recoil/atoms/TodoState";
 import { ToDo } from "../lib/interface/todoInterface";
 
 interface IInjectTestingRecoilStateProps {
@@ -8,7 +8,7 @@ interface IInjectTestingRecoilStateProps {
 }
 
 const InjectTestingRecoilState = ({
-  todos,
+  todos
 }: IInjectTestingRecoilStateProps) => {
   const setTodos = useSetRecoilState(todoState);
   useEffect(() => {

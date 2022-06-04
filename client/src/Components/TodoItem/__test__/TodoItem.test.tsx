@@ -6,18 +6,19 @@ describe("TodoItem", () => {
   const handleRemoveItem = jest.fn();
 
   const todo = {
-    id: "123456",
-    name: "달리기",
-    state: State.TODO,
+    _id: "123456",
+    title: "달리기",
+    desc: "",
+    state: State.TODO
   };
 
   it("TodoItem에는 todo name과 삭제 버튼이 출력되어야합니다.", () => {
     const { getByText, getByRole } = render(
-      <TodoItem todo={todo} handleRemoveItem={handleRemoveItem} />,
+      <TodoItem todo={todo} handleRemoveItem={handleRemoveItem} />
     );
 
     const deleteButton = getByRole("button", {
-      name: "삭제",
+      name: "삭제"
     }) as HTMLButtonElement;
     const span = getByText("달리기") as HTMLSpanElement;
 
@@ -27,14 +28,14 @@ describe("TodoItem", () => {
 
   it("handleRemoveItem 함수 테스트", () => {
     const { getByRole } = render(
-      <TodoItem todo={todo} handleRemoveItem={handleRemoveItem} />,
+      <TodoItem todo={todo} handleRemoveItem={handleRemoveItem} />
     );
 
     const deleteButton = getByRole("button", {
-      name: "삭제",
+      name: "삭제"
     }) as HTMLButtonElement;
 
     fireEvent.click(deleteButton);
-    expect(handleRemoveItem).toBeCalledWith(todo.id);
+    expect(handleRemoveItem).toBeCalledWith(todo._id);
   });
 });

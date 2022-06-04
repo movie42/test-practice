@@ -12,8 +12,8 @@ describe("App 통합 테스트", () => {
         <App />
       </>,
       {
-        wrapper: RecoilRoot,
-      },
+        wrapper: RecoilRoot
+      }
     );
   it("form 컨테이너와 list 컨테이너가 출력되어야합니다.", () => {
     const { getByPlaceholderText, getByTestId } = renderApp([]);
@@ -33,7 +33,7 @@ describe("App 통합 테스트", () => {
 
   it("삭제 버튼을 누르면 list container안에 있는 item이 삭제되어야합니다.", () => {
     const { getByRole, getByText } = renderApp([
-      { id: "1252", name: "달리기", state: State.TODO },
+      { _id: "1252", title: "달리기", desc: "", state: State.TODO }
     ]);
     const deleteButton = getByRole("button", { name: "삭제" });
     const li = getByText("달리기");
