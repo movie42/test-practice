@@ -1,10 +1,10 @@
-export enum TodoState {
+export enum State {
   TODO = "todo",
-  DONE = "done"
+  DONE = "done",
 }
 
 export interface ToDo {
   id: string;
   name: string;
-  state: TodoState;
+  state: State;
 }
