@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { renderHook } from "@testing-library/react";
-import { State } from "../../../lib/interface/todoInterface";
 import { RecoilRoot, useSetRecoilState, useRecoilValue } from "recoil";
 import { todoState } from "../TodoState";
+import { ToDo } from "../../../lib/interface/todoInterface";
 
 it("recoil state 상태 테스트", async () => {
-  const query = {
+  const query: ToDo = {
     _id: "15251",
     title: "달리기",
-    state: State.TODO
+    state: "todo",
   };
 
   const { result } = renderHook(
@@ -21,12 +21,12 @@ it("recoil state 상태 테스트", async () => {
       return useRecoilValue(todoState);
     },
     {
-      wrapper: RecoilRoot
-    }
+      wrapper: RecoilRoot,
+    },
   );
 
   expect(result.current).toEqual([
-    { _id: "15251", title: "달리기", state: "todo" }
+    { _id: "15251", title: "달리기", state: "todo" },
   ]);
   expect(result.current.length).toEqual(1);
 });

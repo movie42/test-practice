@@ -8,12 +8,14 @@ interface IInjectTestingRecoilStateProps {
 }
 
 const InjectTestingRecoilState = ({
-  todos
+  todos,
 }: IInjectTestingRecoilStateProps) => {
   const setTodos = useSetRecoilState(todoState);
+
   useEffect(() => {
     setTodos(todos);
-  }, []);
+  }, [todos]);
+
   return null;
 };
 

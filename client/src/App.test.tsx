@@ -2,7 +2,7 @@ import { fireEvent, render } from "@testing-library/react";
 import { RecoilRoot } from "recoil";
 import App from "./App";
 import InjectTestingRecoilState from "./Common/InjectTestingRecoilState";
-import { State, ToDo } from "./lib/interface/todoInterface";
+import { ToDo } from "./lib/interface/todoInterface";
 
 describe("App 통합 테스트", () => {
   const renderApp = (todos: ToDo[]) =>
@@ -12,8 +12,8 @@ describe("App 통합 테스트", () => {
         <App />
       </>,
       {
-        wrapper: RecoilRoot
-      }
+        wrapper: RecoilRoot,
+      },
     );
   it("form 컨테이너와 list 컨테이너가 출력되어야합니다.", () => {
     const { getByPlaceholderText, getByTestId } = renderApp([]);
@@ -33,7 +33,7 @@ describe("App 통합 테스트", () => {
 
   it("삭제 버튼을 누르면 list container안에 있는 item이 삭제되어야합니다.", () => {
     const { getByRole, getByText } = renderApp([
-      { _id: "1252", title: "달리기", desc: "", state: State.TODO }
+      { _id: "1252", title: "달리기", desc: "", state: "todo" },
     ]);
     const deleteButton = getByRole("button", { name: "삭제" });
     const li = getByText("달리기");
