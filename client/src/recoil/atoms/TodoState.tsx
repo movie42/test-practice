@@ -9,7 +9,7 @@ export const todoState = atom<ToDo[]>({
 
 export const fetchTodo = selector({
   key: "fetchTodo",
-  get: async ({ get }) => {
+  get: async () => {
     const response = await axios.get("http://localhost:3300/api/todo");
     return await response.data;
   },
